@@ -80,14 +80,16 @@ export function EditTaskDialog({ task, isOpen, onClose }: EditTaskDialogProps) {
 
       // Notify TaskList to refresh
       window.dispatchEvent(new Event("taskUpdated"));
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Update task error:", error);
 
-      if (error.status === 401) {
+      const apiError = error as { status?: number; message?: string };
+
+      if (apiError.status === 401) {
         toast.error("Please log in to update tasks");
-      } else if (error.status === 404) {
+      } else if (apiError.status === 404) {
         toast.error("Task not found");
-      } else if (error.status === 422) {
+      } else if (apiError.status === 422) {
         toast.error("Invalid task data");
       } else {
         toast.error("Failed to update task. Please try again.");

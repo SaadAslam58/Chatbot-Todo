@@ -74,12 +74,14 @@ export function CreateTaskDialog() {
 
       // Notify TaskList to refresh
       window.dispatchEvent(new Event("taskUpdated"));
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Create task error:", error);
 
-      if (error.status === 401) {
+      const apiError = error as { status?: number; message?: string };
+
+      if (apiError.status === 401) {
         toast.error("Please log in to create tasks");
-      } else if (error.status === 422) {
+      } else if (apiError.status === 422) {
         toast.error("Invalid task data");
       } else {
         toast.error("Failed to create task. Please try again.");

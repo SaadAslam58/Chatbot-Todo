@@ -38,12 +38,14 @@ export function DeleteConfirmDialog({
 
       // Notify TaskList to refresh
       window.dispatchEvent(new Event("taskUpdated"));
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Delete task error:", error);
 
-      if (error.status === 401) {
+      const apiError = error as { status?: number; message?: string };
+
+      if (apiError.status === 401) {
         toast.error("Please log in to delete tasks");
-      } else if (error.status === 404) {
+      } else if (apiError.status === 404) {
         toast.error("Task not found");
       } else {
         toast.error("Failed to delete task. Please try again.");
@@ -76,7 +78,7 @@ export function DeleteConfirmDialog({
             <DialogTitle>Delete Task</DialogTitle>
           </div>
           <DialogDescription className="pt-3">
-            Are you sure you want to delete <strong>"{task.title}"</strong>?
+            Are you sure you want to delete <strong>&quot;{task.title}&quot;</strong>?
             This action cannot be undone.
           </DialogDescription>
         </DialogHeader>

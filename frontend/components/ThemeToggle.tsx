@@ -11,8 +11,10 @@ export function ThemeToggle() {
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (!mounted) {
+      setMounted(true);
+    }
+  }, [mounted]);
 
   if (!mounted) {
     // Return placeholder to avoid hydration mismatch

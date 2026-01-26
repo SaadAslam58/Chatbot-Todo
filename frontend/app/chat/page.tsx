@@ -21,9 +21,13 @@ export default function ChatPage() {
       return;
     }
 
-    setUserEmail(email || "");
-    setIsLoading(false);
-  }, [router]);
+    if (email !== userEmail) {
+      setUserEmail(email || "");
+    }
+    if (isLoading) {
+      setIsLoading(false);
+    }
+  }, [router, userEmail, isLoading]);
 
   if (isLoading) {
     return (

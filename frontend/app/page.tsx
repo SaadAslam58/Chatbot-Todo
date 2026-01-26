@@ -15,12 +15,14 @@ export default function LandingPage() {
     // Check if user is authenticated
     if (typeof window !== "undefined") {
       const token = document.cookie.includes("auth_token");
-      if (token) {
+      if (token && !isAuthenticated) {
         setIsAuthenticated(true);
         router.push("/dashboard");
+      } else if (!token && isAuthenticated) {
+        setIsAuthenticated(false);
       }
     }
-  }, [router]);
+  }, [router, isAuthenticated]);
 
   if (isAuthenticated) {
     return null; // Will redirect to dashboard

@@ -20,10 +20,14 @@ export default function DashboardPageClient() {
       // Redirect to login if no auth token
       router.push('/login');
     } else {
-      setHasAuth(true);
-      setIsLoading(false);
+      if (!hasAuth) {
+        setHasAuth(true);
+      }
+      if (isLoading) {
+        setIsLoading(false);
+      }
     }
-  }, [router]);
+  }, [router, hasAuth, isLoading]);
 
   if (isLoading) {
     return (
