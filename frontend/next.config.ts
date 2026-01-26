@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     ],
   },
   trailingSlash: true, // Required for GitHub Pages
-  basePath: process.env.NODE_ENV === 'production' ? '/Chatbot-Todo' : '', // Adjust for GitHub Pages subdirectory
+  basePath: process.env.GITHUB_PAGES ? '/Chatbot-Todo' : '', // Adjust for GitHub Pages subdirectory
 };
 
 export default nextConfig;
