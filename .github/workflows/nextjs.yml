@@ -22,6 +22,8 @@ concurrency:
 
 env:
   NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000' }}
+  # For GitHub Pages deployment, we'll use a dummy API URL since real API calls won't work
+  NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL || 'https://example.com/api' }}
 
 jobs:
   # Build job
