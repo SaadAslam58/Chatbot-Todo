@@ -125,16 +125,18 @@ BETTER_AUTH_SECRET=your-jwt-secret
 4. Update ALLOWED_ORIGINS in backend
 
 ### Frontend → GitHub Pages (Static Export)
-❌ **Not Recommended**: This application cannot be deployed to GitHub Pages as static export because it requires:
-1. Server-side authentication and redirects (not supported in static sites)
-2. API calls to a backend service
-3. Dynamic data that cannot be pre-rendered
+❌ **Not Supported**: This application cannot be deployed to GitHub Pages because it uses:
+1. Server-side middleware for authentication (middleware.ts) - not supported in static sites
+2. Server-side functions (cookies, redirects) that cannot be pre-rendered
+3. Dynamic routes requiring backend authentication
+4. API calls to external backend service
 
-**Recommended Alternative**: Use Vercel for deployment:
-1. Push repo to GitHub
-2. Import to Vercel (root: frontend/)
-3. Set NEXT_PUBLIC_API_URL to your backend URL
-4. Update ALLOWED_ORIGINS in backend
+**Required for proper functionality**:
+- Server-side rendering capability
+- Middleware support
+- Backend API connectivity
+
+**Recommended Deployment**: Use Vercel, Netlify (with Edge Functions), or similar platforms that support Next.js applications with server-side functionality.
 
 ## Tech Stack
 
