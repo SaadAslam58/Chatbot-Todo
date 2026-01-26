@@ -19,4 +19,4 @@ const nextConfig: NextConfig = {
   basePath: isGitHubPages ? '/Chatbot-Todo' : '', // Adjust for GitHub Pages subdirectory
 };
 
-export default nextConfig;
+module.exports = nextConfig;

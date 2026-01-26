@@ -52,7 +52,6 @@ jobs:
       - name: Build site for GitHub Pages
         run: |
           npm run build
-          npm run export
         working-directory: frontend
         env:
           NODE_ENV: production
