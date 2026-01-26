@@ -125,13 +125,18 @@ BETTER_AUTH_SECRET=your-jwt-secret
 4. Update ALLOWED_ORIGINS in backend
 
 ### Frontend → GitHub Pages (Static Export)
-1. The project is configured for static export
-2. GitHub Actions workflow is set up to deploy to GitHub Pages
-3. Go to repository Settings > Pages
-4. Under "Build and deployment", select:
+⚠️ **Important**: This application requires a backend API to function. GitHub Pages only serves static files, so you'll need to:
+1. Deploy the backend separately (e.g., to Hugging Face Spaces, Heroku, etc.)
+2. Update the GitHub Pages deployment to use the live backend URL
+3. The project is configured for static export
+4. GitHub Actions workflow is set up to deploy to GitHub Pages
+5. Go to repository Settings > Pages
+6. Under "Build and deployment", select:
    - Source: Deploy from a branch
    - Branch: main, root directory
-5. The site will be deployed at: https://saadaslam58.github.io/Chatbot-Todo/
+7. The site will be deployed at: https://saadaslam58.github.io/Chatbot-Todo/
+8. Set up environment variables in GitHub repository settings:
+   - `NEXT_PUBLIC_API_URL`: URL of your deployed backend service
 
 ## Tech Stack
 
