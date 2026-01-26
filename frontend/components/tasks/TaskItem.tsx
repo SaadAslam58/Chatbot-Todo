@@ -38,14 +38,17 @@ export function TaskItem({ task }: TaskItemProps) {
         await tasksAPI.toggleComplete(task.id);
         window.dispatchEvent(new Event("taskUpdated"));
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Toggle task error:", error);
+
+      const apiError = error as { message?: string; status?: number; details?: any };
+
       console.error("Error details:", {
-        message: error?.message,
-        status: error?.status,
-        details: error?.details
+        message: apiError?.message,
+        status: apiError?.status,
+        details: apiError?.details
       });
-      toast.error(error?.message || "Failed to update task");
+      toast.error(apiError?.message || "Failed to update task");
     }
   };
 
