@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
 
 // For GitHub Pages, we need to avoid features that don't work with static export
 const isGitHubPages = process.env.GITHUB_PAGES === 'true' || process.env.VERCEL_ENV === 'preview';

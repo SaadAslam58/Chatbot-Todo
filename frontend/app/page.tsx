@@ -184,28 +184,9 @@ export default function LandingPage() {
             </p>
             <div className="flex items-center gap-3">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Made by <span className="font-semibold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Sabeh Shaikh</span>
+                Made by <span className="font-semibold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Saad Aslam</span>
               </p>
-              <div className="flex gap-2">
-                <a
-                  href="https://github.com/SabehShaikh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/sabeh-shaikh/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </div>
+    
             </div>
           </div>
         </div>
