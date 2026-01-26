@@ -133,8 +133,12 @@ BETTER_AUTH_SECRET=your-jwt-secret
 
 **For Local Testing with GitHub Pages Frontend + Local Backend**:
 1. Run the backend locally: `uvicorn main:app --reload`
-2. Configure backend CORS to allow GitHub Pages: Set `ALLOWED_ORIGINS` environment variable to include `https://saadaslam58.github.io`
-3. Access the GitHub Pages frontend and it should connect to your local backend
+2. The backend already includes `https://saadaslam58.github.io` in the allowed origins
+3. To use with your local backend, you'll need to redeploy the frontend with your local backend URL:
+   - Clone the repo locally
+   - Set environment: `NEXT_PUBLIC_API_URL=http://localhost:8000` (adjust port as needed)
+   - Build and deploy to GitHub Pages again, or
+   - Access the GitHub Pages frontend and manually override the API URL in browser dev tools
 
 **Required for proper functionality**:
 - Server-side rendering capability

@@ -30,6 +30,8 @@ base_origins = [
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
     "http://127.0.0.1:3002",
+    # GitHub Pages URL for frontend
+    "https://saadaslam58.github.io",
     # Production URLs
     "https://todo-vxwd.vercel.app",
     "https://sabehshaikh-hackathon2-phase3.hf.space",

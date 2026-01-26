@@ -1,7 +1,7 @@
 import type { Task, TaskCreateRequest, TaskUpdateRequest, APIError, ChatRequest, ChatResponse } from "./types";
 
-// PRODUCTION FIX: Hardcoded HTTPS URL to prevent mixed content errors on Vercel
-// This ensures the app always uses HTTPS in production, even if env var is missing
+// Default backend URL - can be overridden with NEXT_PUBLIC_API_URL environment variable
+// For local development, set NEXT_PUBLIC_API_URL to your local backend (e.g., http://localhost:8000)
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://sabehshaikh-hackathon2-todo-backend.hf.space";
 
 // Retry configuration
