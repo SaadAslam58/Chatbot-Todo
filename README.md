@@ -125,11 +125,16 @@ BETTER_AUTH_SECRET=your-jwt-secret
 4. Update ALLOWED_ORIGINS in backend
 
 ### Frontend → GitHub Pages (Static Export)
-❌ **Not Supported**: This application cannot be deployed to GitHub Pages because it uses:
+❌ **Not Supported for Production**: This application cannot be deployed to GitHub Pages because it uses:
 1. Server-side middleware for authentication (middleware.ts) - not supported in static sites
 2. Server-side functions (cookies, redirects) that cannot be pre-rendered
 3. Dynamic routes requiring backend authentication
 4. API calls to external backend service
+
+**For Local Testing with GitHub Pages Frontend + Local Backend**:
+1. Run the backend locally: `uvicorn main:app --reload`
+2. Configure backend CORS to allow GitHub Pages: Set `ALLOWED_ORIGINS` environment variable to include `https://saadaslam58.github.io`
+3. Access the GitHub Pages frontend and it should connect to your local backend
 
 **Required for proper functionality**:
 - Server-side rendering capability
