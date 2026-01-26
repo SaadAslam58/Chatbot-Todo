@@ -29,7 +29,8 @@
       "Bash(git init:*)",
       "Bash(git remote add:*)",
       "Bash(dir *.env)",
-      "WebFetch(domain:openai.github.io)"
+      "WebFetch(domain:openai.github.io)",
+      "Bash(gh repo edit --enable-gh-pages)"
     ]
   }
 }
