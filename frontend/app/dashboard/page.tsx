@@ -1,14 +1,10 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import { DashboardClient } from "./DashboardClient";
+import { Suspense } from 'react';
+import DashboardPageClient from './page.client';
 
-export default async function DashboardPage() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("auth_token");
-
-  if (!token) {
-    redirect("/login");
-  }
-
-  return <DashboardClient />;
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DashboardPageClient />
+    </Suspense>
+  );
 }
