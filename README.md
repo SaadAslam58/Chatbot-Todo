@@ -132,13 +132,13 @@ BETTER_AUTH_SECRET=your-jwt-secret
 4. API calls to external backend service
 
 **For Local Testing with GitHub Pages Frontend + Local Backend**:
-1. Run the backend locally: `uvicorn main:app --reload`
-2. The backend already includes `https://saadaslam58.github.io` in the allowed origins
-3. To use with your local backend, you'll need to redeploy the frontend with your local backend URL:
+1. The frontend is currently configured to connect to: `http://127.0.0.1:8080`
+2. To connect your local backend, run it on port 8080: `uvicorn main:app --port 8080 --reload`
+3. The backend already includes `https://saadaslam58.github.io/Chatbot-Todo/` in the allowed origins
+4. If you want to use a different port, you'll need to redeploy the frontend with the new API URL:
    - Clone the repo locally
-   - Set environment: `NEXT_PUBLIC_API_URL=http://localhost:8000` (adjust port as needed)
-   - Build and deploy to GitHub Pages again, or
-   - Access the GitHub Pages frontend and manually override the API URL in browser dev tools
+   - Update frontend/.env with: `NEXT_PUBLIC_API_URL=http://localhost:[YOUR_PORT]`
+   - Build and deploy to GitHub Pages again
 
 **Required for proper functionality**:
 - Server-side rendering capability
