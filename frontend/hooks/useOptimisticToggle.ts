@@ -6,10 +6,10 @@ export function useOptimisticToggle(initialValue: boolean) {
 
   // Sync with prop changes when not pending
   useEffect(() => {
-    if (!isPending) {
+    if (!isPending && value !== initialValue) {
       setValue(initialValue);
     }
-  }, [initialValue, isPending]);
+  }, [initialValue, isPending, value]);
 
   const toggle = async (onToggle: () => Promise<void>) => {
     // Store original value for rollback

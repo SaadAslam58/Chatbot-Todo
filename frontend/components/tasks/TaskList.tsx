@@ -10,18 +10,6 @@ import { tasksAPI } from "@/lib/api";
 
 type FilterTab = "all" | "pending" | "completed";
 
-function LoadingSkeleton() {
-  return (
-    <div className="space-y-4">
-      {[1, 2, 3].map((i) => (
-        <div
-          key={i}
-          className="h-24 animate-pulse rounded-lg bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700"
-        />
-      ))}
-    </div>
-  );
-}
 
 function ErrorState({ onRetry }: { onRetry?: () => void }) {
   return (

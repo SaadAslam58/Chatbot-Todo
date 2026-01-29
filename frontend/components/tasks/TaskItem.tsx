@@ -41,7 +41,7 @@ export function TaskItem({ task }: TaskItemProps) {
     } catch (error: unknown) {
       console.error("Toggle task error:", error);
 
-      const apiError = error as { message?: string; status?: number; details?: any };
+      const apiError = error as { message?: string; status?: number; details?: unknown };
 
       console.error("Error details:", {
         message: apiError?.message,
