@@ -32,9 +32,12 @@ base_origins = [
     "http://127.0.0.1:3002",
     # GitHub Pages URL for frontend
     "https://saadaslam58.github.io",
+    "https://saadaslam58.github.io/Chatbot-Todo",
+    "https://saadaslam58.github.io/chatbot-todo",
+    "https://saadaslam58.github.io/Chatbot-Todo/",
+    "https://saadaslam58.github.io/chatbot-todo/",
     # Production URLs
     "https://todo-vxwd.vercel.app",
-    "https://sabehshaikh-hackathon2-phase3.hf.space",
 ]
 
 # Add any extra origins from ALLOWED_ORIGINS env var
@@ -97,5 +100,6 @@ def root():
     return {
         "message": "Todo AI Chatbot API",
         "docs": "/docs",
-        "health": "/api/health"
+        "health": "/api/health",
+        "version": "1.0.0"
     }
