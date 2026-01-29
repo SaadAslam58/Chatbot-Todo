@@ -13,6 +13,8 @@ import { Pencil, Trash2, CheckCircle2 } from "lucide-react";
 import { EditTaskDialog } from "./EditTaskDialog";
 import { DeleteConfirmDialog } from "./DeleteConfirmDialog";
 
+// Added comment to trigger new build
+
 interface TaskItemProps {
   task: Task;
 }
