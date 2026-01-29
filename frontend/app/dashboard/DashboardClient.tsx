@@ -6,7 +6,6 @@ import { TaskList } from "@/components/tasks/TaskList";
 import { CreateTaskDialog } from "@/components/tasks/CreateTaskDialog";
 import { ChatWidget } from "@/components/ChatWidget";
 import { getUserEmail } from "@/lib/api";
-import { Github, Linkedin } from "lucide-react";
 
 export function DashboardClient() {
   const [userEmail, setUserEmail] = useState<string | null>(null);

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Zap, Shield, Sparkles, Github, Linkedin } from "lucide-react";
+import { CheckCircle2, Zap, Shield, Sparkles } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
